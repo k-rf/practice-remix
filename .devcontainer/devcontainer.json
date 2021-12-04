@@ -7,13 +7,14 @@
   "remoteUser": "remix",
   "overrideCommand": true,
   "extensions": [
-    "eamodio.gitlens",
     "extr0py.vscode-relative-line-numbers",
-    "mhutchie.git-graph",
     "mutantdino.resourcemonitor",
+    "eamodio.gitlens",
+    "mhutchie.git-graph",
     "esbenp.prettier-vscode",
     "dbaeumer.vscode-eslint",
-    "kavod-io.vscode-jest-test-adapter"
+    "kavod-io.vscode-jest-test-adapter",
+    "irongeek.vscode-env"
   ],
   "settings": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -21,6 +22,6 @@
     "editor.codeActionsOnSave": {
       "source.fixAll": true,
       "source.organizeImports": true
-    },
+    }
   }
 }

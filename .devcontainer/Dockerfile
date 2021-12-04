@@ -1,7 +1,7 @@
 FROM node:16
 
-ARG USER=web
-ARG WORKSPACES=/workspaces/web
+ARG USER
+ARG WORKSPACES
 
 SHELL [ "/bin/bash", "-c" ]
 
