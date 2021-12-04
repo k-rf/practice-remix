@@ -1,0 +1,26 @@
+{
+  "name": "remix",
+  "dockerComposeFile": "../docker-compose.dev.yaml",
+  "service": "web",
+  "postCreateCommand": "yarn install",
+  "workspaceFolder": "/workspaces",
+  "remoteUser": "remix",
+  "overrideCommand": true,
+  "extensions": [
+    "eamodio.gitlens",
+    "extr0py.vscode-relative-line-numbers",
+    "mhutchie.git-graph",
+    "mutantdino.resourcemonitor",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "kavod-io.vscode-jest-test-adapter"
+  ],
+  "settings": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSaveMode": "modifications",
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true,
+      "source.organizeImports": true
+    },
+  }
+}

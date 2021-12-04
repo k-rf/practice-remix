@@ -1,0 +1,39 @@
+version: "3.9"
+
+networks:
+  remix:
+    external: true
+
+volumes:
+  remix_bash_history:
+  remix_vscode_extensions:
+  remix_node_modules:
+
+services:
+  web:
+    build:
+      context: .devcontainer
+      args:
+        - USER=remix
+    ports:
+      - 3000:3000
+    working_dir: /workspaces
+    user: remix
+    entrypoint: yarn
+    command: start
+    tty: true
+    networks:
+      - remix
+    volumes:
+      - type: bind
+        source: .
+        target: /workspaces
+      - type: volume
+        source: remix_bash_history
+        target: /commandhistory
+      - type: volume
+        source: remix_node_modules
+        target: /workspaces/node_modules
+      - type: volume
+        source: remix_vscode_extensions
+        target: /home/remix/.vscode-server/extensions
