@@ -10,7 +10,8 @@
     "start": "remix-serve build",
     "lint": "eslint --fix --cache --ext .tsx,.ts,.js ./src",
     "format": "prettier . --write",
-    "check-types": "tsc --project tsconfig.json --pretty --noEmit"
+    "check-types": "tsc --project tsconfig.json --pretty --noEmit",
+    "prisma:studio": "prisma studio"
   },
   "lint-staged": {
     "*.{tsx,ts,js}": [
@@ -21,7 +22,11 @@
       "prettier --write"
     ]
   },
+  "prisma": {
+    "seed": "node --require esbuild-register prisma/seed.ts"
+  },
   "dependencies": {
+    "@prisma/client": "^3.6.0",
     "@remix-run/react": "^1.0.6",
     "@remix-run/serve": "^1.0.6",
     "react": "^17.0.2",
@@ -36,7 +41,8 @@
     "@types/react-dom": "^17.0.11",
     "@typescript-eslint/eslint-plugin": "^5.5.0",
     "@typescript-eslint/parser": "^5.5.0",
-    "esbuild-register": "^3.2.0",
+    "dotenv-cli": "^4.1.1",
+    "esbuild-register": "^3.2.1",
     "eslint": "^8.4.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-import-resolver-typescript": "^2.5.0",
@@ -50,6 +56,7 @@
     "husky": "^7.0.0",
     "lint-staged": "^12.1.2",
     "prettier": "^2.5.1",
+    "prisma": "^3.6.0",
     "typescript": "^4.5.2"
   }
 }

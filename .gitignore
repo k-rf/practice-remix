@@ -28,3 +28,6 @@ yarn-error.log*
 
 # cache
 *cache
+
+# prisma
+/prisma/dev.db
