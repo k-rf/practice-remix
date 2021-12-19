@@ -1,8 +1,8 @@
 import type { LinksFunction } from '@remix-run/react/routeModules';
 import { Outlet, LoaderFunction, Link, useLoaderData } from 'remix';
 
+import { db } from '~/lib/db.server';
 import stylesUrl from '~/styles/jokes.css';
-import { db } from '~/utils/db.server';
 
 export const links: LinksFunction = () => {
   return [{ rel: 'stylesheet', href: stylesUrl }];

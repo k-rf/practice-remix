@@ -1,7 +1,7 @@
 import type { Joke } from '@prisma/client';
 import { Link, LoaderFunction, useLoaderData } from 'remix';
 
-import { db } from '~/utils/db.server';
+import { db } from '~/lib/db.server';
 
 type LoaderData = { joke: Joke };
 

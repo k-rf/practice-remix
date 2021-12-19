@@ -1,6 +1,6 @@
 import type { LinksFunction } from 'remix';
 
-import { App } from './app';
+import { App } from './layout';
 import globalLargeStylesUrl from './styles/global-large.css';
 import globalMediumStylesUrl from './styles/global-medium.css';
 import globalStylesUrl from './styles/global.css';
