@@ -1,7 +1,9 @@
+import { User } from '@prisma/client';
 import type { LinksFunction } from '@remix-run/react/routeModules';
 import { Outlet, LoaderFunction, Link, useLoaderData } from 'remix';
 
 import { db } from '~/lib/db.server';
+import { getUser } from '~/lib/session.server';
 import stylesUrl from '~/styles/jokes.css';
 
 export const links: LinksFunction = () => {
@@ -9,18 +11,22 @@ export const links: LinksFunction = () => {
 };
 
 type LoaderData = {
+  user: User | null;
   jokeListItems: Array<{ id: string; name: string }>;
 };
 
-export const loader: LoaderFunction = async () => {
-  const data: LoaderData = {
-    jokeListItems: await db.joke.findMany({
-      take: 5,
-      select: { id: true, name: true },
-      orderBy: { createdAt: 'desc' },
-    }),
-  };
+export const loader: LoaderFunction = async ({ request }) => {
+  const jokeListItems = await db.joke.findMany({
+    take: 5,
+    select: { id: true, name: true },
+    orderBy: { createdAt: 'desc' },
+  });
+  const user = await getUser(request);
 
+  const data: LoaderData = {
+    jokeListItems,
+    user,
+  };
   return data;
 };
 
@@ -37,6 +43,18 @@ const Jokes = () => {
               <span className='logo-medium'>J🤪KES</span>
             </Link>
           </h1>
+          {data.user ? (
+            <div className='user-info'>
+              <span>{`Hi ${data.user.username}`}</span>
+              <form action='/logout' method='post'>
+                <button type='submit' className='button'>
+                  Logout
+                </button>
+              </form>
+            </div>
+          ) : (
+            <Link to='/login'>Login</Link>
+          )}
         </div>
       </header>
       <main className='jokes-main'>
