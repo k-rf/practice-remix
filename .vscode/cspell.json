@@ -8,7 +8,8 @@
     "Parens",
     "prettierignore",
     "Prettierrc",
-    "twixrox"
+    "twixrox",
+    "whoopsies"
   ],
   "ignorePaths": [".vscode", ".devcontainer"]
 }

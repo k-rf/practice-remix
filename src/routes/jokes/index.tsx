@@ -1,6 +1,5 @@
 import type { Joke } from '@prisma/client';
-import { Link } from 'react-router-dom';
-import { LoaderFunction, useLoaderData } from 'remix';
+import { LoaderFunction, useLoaderData, Link } from 'remix';
 
 import { db } from '~/lib/db.server';
 
@@ -15,6 +14,7 @@ export const loader: LoaderFunction = async () => {
   });
 
   const data: LoaderData = { randomJoke };
+
   return data;
 };
 
@@ -33,3 +33,7 @@ const IndexJokesRoute = () => {
 };
 
 export default IndexJokesRoute;
+
+export const ErrorBoundary = () => {
+  return <div className='error-container'>I did a whoopsies.</div>;
+};

@@ -1,11 +1,11 @@
-import type { LinksFunction } from 'remix';
+import { LinksFunction, Outlet } from 'remix';
 
-import { App } from './layout';
+import { Document } from './layout';
 import globalLargeStylesUrl from './styles/global-large.css';
 import globalMediumStylesUrl from './styles/global-medium.css';
 import globalStylesUrl from './styles/global.css';
 
-export default App;
+export { CatchBoundary, ErrorBoundary } from './layout';
 
 export const links: LinksFunction = () => {
   return [
@@ -22,3 +22,12 @@ export const links: LinksFunction = () => {
     },
   ];
 };
+
+export const App = () => {
+  return (
+    <Document>
+      <Outlet />
+    </Document>
+  );
+};
+export default App;
