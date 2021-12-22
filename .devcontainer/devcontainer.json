@@ -15,7 +15,8 @@
     "dbaeumer.vscode-eslint",
     "kavod-io.vscode-jest-test-adapter",
     "irongeek.vscode-env",
-    "streetsidesoftware.code-spell-checker"
+    "streetsidesoftware.code-spell-checker",
+    "prisma.prisma"
   ],
   "settings": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",

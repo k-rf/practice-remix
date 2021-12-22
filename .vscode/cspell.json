@@ -1,6 +1,15 @@
 {
   "version": "0.2",
   "language": "en",
-  "words": ["esbuild", "linebreak", "Parens", "prettierignore", "Prettierrc"],
+  "words": [
+    "esbuild",
+    "kody",
+    "linebreak",
+    "Parens",
+    "prettierignore",
+    "Prettierrc",
+    "twixrox",
+    "whoopsies"
+  ],
   "ignorePaths": [".vscode", ".devcontainer"]
 }

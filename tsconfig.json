@@ -15,5 +15,6 @@
     "jsx": "react-jsx"
   },
   "include": ["src", "remix.env.d.ts"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "extends": "./tsconfig.paths.json"
 }
